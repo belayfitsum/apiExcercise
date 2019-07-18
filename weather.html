@@ -1,21 +1,18 @@
-
-<<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
     <title>Irish Rail API</title>
+      <script>
 
-    <script>
-
-      var xmlhttp;
-      window.onload = function()
-      {
+        var xmlhttp;
+        window.onload = function()
+        {
         var url = "http://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML";
         xmlhttp = new XMLHttpRequest;
         xmlhttp.open("GET", url, true);
         xmlhttp.onreadystatechange = processTrainInfo;
         xmlhttp.send();
-      }
+        }
       function processTrainInfo()
       {
         if(xmlhttp.readystate==4 && xmlhttp.status==200)
