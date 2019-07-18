@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <title>Irish Rail API</title>
-      <script>
-        var xmlhttp;
-        window.onload = function()
-        {
-        var url = "http://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML";
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", url, true);
-        xmlhttp.onreadystatechange = processTrainInfo;
-        xmlhttp.send();
-        }
-      function processTrainInfo()
-      {
-        if(xmlhttp.readystate==4 && xmlhttp.status==200)
-        {
-          console.log(xmlhttp.responseXML);
-        }
-      }
-    </script>
-  </head>
-  <body>
+    <head>
+        <title>Irish Rail</title>
+        <script>
+            var xmlhttp;
 
-  </body>
+            window.onload = function()
+            {
+                 var url = "http://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML";
+                 xmlhttp = new XMLHttpRequest();
+                 xmlhttp.open("GET", url, true);
+                 xmlhttp.onreadystatechange = processTrainInfo;
+                 xmlhttp.send();
+            }
+
+            function processTrainInfo()
+            {
+                if(xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    console.log(xmlhttp.responseXML);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="result"></div>
+    </body>
 </html>
